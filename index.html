@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NotBad😎Paint</title>
+  <link rel="icon" href="img/111.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/paint.css">
+  <link rel="stylesheet" hrf="css/styleColor.css">
+  <link rel="stylesheet" hrf="css/style3.css">
+  <script type="text/javascript" src="webcam.min.js"></script>
+  <script src="code/chapter/19_paint.js"></script>
+</head>
+
+
+<body>
+  <script>createPaint(document.body);</script>
+  <input type="button" id="btn123"
+    class="toolbar jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}" value="Pick page color">
+  <span class="github"><a href="https://github.com/new" target="_blank"><img src="img/1.png"
+        style="width: 1%;"></a></span>
+  <input type=button value="Snapshot" onClick="take_snapshot()" class="toolbarlol">
+  <div class="too"></div>
+  <div id="my_camera" class="toolbar"></div>
+  <div class="too"></div>
+  <div id="results" class="toolbar">xxx</div>
+
+
+
+
+
+  <script language="JavaScript">
+    Webcam.set({
+      width: 500,
+      height: 350,
+      dest_width: 500,
+      dest_height: 350,
+      image_format: 'png',
+      jpeg_quality: 90
+    });
+    Webcam.attach('#my_camera');
+  </script>
+
+  <script language="JavaScript">
+    function take_snapshot() {
+      // take snapshot and get image data
+      Webcam.snap(function (data_uri) {
+        // display results in page
+        document.getElementById('results').innerHTML =
+          '<img src="' + data_uri + '"/>';
+      });
+    }
+  </script>
+
+
+</body>
+<script src="code/chapter/jscolor.js"></script>
+<script src="code/chapter/myScript.js"></script>
+
+
+</html>
